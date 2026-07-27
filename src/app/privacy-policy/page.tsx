@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Section, SubTitle } from "@/components/PolicySection";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Netsafe",
@@ -104,8 +105,10 @@ export default function PrivacyPolicyPage() {
       <Section title="6. Your rights">
         <p>
           You can review and update most of your information from within the app (Menu → Account).
-          To request access to, correction of, or deletion of your data, contact us at{" "}
+          To request access to or correction of your data, contact us at{" "}
           <a className="text-blue-600 underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+          To request deletion of your account and associated data, see our{" "}
+          <a className="text-blue-600 underline" href="/delete-account">Account &amp; Data Deletion</a> page.
         </p>
       </Section>
 
@@ -132,17 +135,4 @@ export default function PrivacyPolicyPage() {
       </Section>
     </main>
   );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="mt-8">
-      <h2 className="text-xl font-semibold text-zinc-900">{title}</h2>
-      <div className="mt-2 space-y-3 leading-7">{children}</div>
-    </section>
-  );
-}
-
-function SubTitle({ children }: { children: React.ReactNode }) {
-  return <h3 className="font-medium text-zinc-900">{children}</h3>;
 }
